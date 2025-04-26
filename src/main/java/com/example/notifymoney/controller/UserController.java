@@ -44,15 +44,11 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-//    @PatchMapping("/users/update/{id}")
-//    public ResponseEntity<User> updateUser(@PathVariable(value = "id") Long id, @RequestBody User updateUser) {
-//        try {
-//            userService.updateUser(id, updateUser);
-//        } catch (Exception e) {
-//            throw new RuntimeException(e);
-//        }
-//        return ResponseEntity.ok().build();
-//    }
+    @PatchMapping("/users/update/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable(value = "id") Long id, @RequestBody User updateUser) {
+            userService.updateUser(id, updateUser);
+        return ResponseEntity.ok().build();
+    }
 
     @DeleteMapping("/users/{id}")
     public ResponseEntity<User> deleteUserById(@PathVariable(value = "id") Long id){
